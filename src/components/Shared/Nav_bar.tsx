@@ -25,7 +25,7 @@ export default function () {
                     </div>
                     <Link to="/" >
                          <img
-                              src="/logo.jpg"
+                              src="/logo.png"
                               className="w-20"
                          />
                     </Link>
@@ -36,8 +36,8 @@ export default function () {
                     </ul>
                </div>
                <div className="navbar-end space-x-3">
-                    <button className="btn btn-success">Log In</button>
-                    <button className="btn btn-info">Register</button>
+                    <Link to="/login" className="btn btn-success">Log In</Link>
+                    <Link to="/register" className="btn btn-info">Register</Link>
                </div>
           </div>
      )
