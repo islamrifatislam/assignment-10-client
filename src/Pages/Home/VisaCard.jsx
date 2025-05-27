@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import { Link } from "react-router"
 
 export default function VisaCard() {
      const [data, setData] = useState()
@@ -22,17 +23,17 @@ export default function VisaCard() {
                          data?.slice(0,6)?.map(visa =>
                               <div key={visa?._id} class="card bg-base-200 shadow-xl">
                                    <figure>
-                                        <img src={visa?.country_image} />
+                                        <img src={visa?.countryImage} />
                                    </figure>
                                    <div class="card-body">
-                                        <h3 class="card-title">{visa?.country_name}</h3>
-                                        <p><strong>Visa Type:</strong> {visa?.visa_type}</p>
-                                        <p><strong>Processing Time:</strong> {visa?.processing_time}</p>
+                                        <h3 class="card-title">{visa?.countryName}</h3>
+                                        <p><strong>Visa Type:</strong> {visa?.visaType}</p>
+                                        <p><strong>Processing Time:</strong> {visa?.processingTime}</p>
                                         <p><strong>Fee:</strong> ${visa?.fee}</p>
                                         <p><strong>Validity:</strong>{visa?.validity}</p>
-                                        <p><strong>Application Method:</strong> {visa?.application_method}</p>
+                                        <p><strong>Application Method:</strong> {visa?.applicationMethod}</p>
                                         <div class="card-actions justify-end">
-                                             <a href="/visa-details/canada" class="btn btn-primary">See Details</a>
+                                             <Link to={`/all-visa/${visa._id}`} class="btn btn-primary">See Details</Link>
                                         </div>
                                    </div>
                               </div>
